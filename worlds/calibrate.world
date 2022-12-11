@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="calibration">
+        <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+            <ros>
+                <argument>model_states:=model_states_demo</argument>
+            </ros>
+            <update_rate>1.0</update_rate>
+        </plugin>
+        <!-- A global light source -->
+        <include>
+            <uri>model://sun</uri>
+        </include>
+        <!-- A ground plane -->
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+
+        <include>
+            <name>camera</name>
+            <pose>0 0 2 0 0 0</pose>
+            <static>true</static>
+            <uri>model://camera</uri>
+        </include>
+
+    </world>
+</sdf>
